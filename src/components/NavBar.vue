@@ -1,6 +1,6 @@
 <template>
   <div>
-  <b-navbar toggleable="lg" type="light" variant="light">
+  <b-navbar toggleable="lg" type="dark" variant="dark">
       <b-container>
 
     <b-navbar-brand href="#">NavBar</b-navbar-brand>
