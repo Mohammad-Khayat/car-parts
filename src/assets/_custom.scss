@@ -1,0 +1,12 @@
+
+$mainRed :#FF3737 ;
+$mainDark:#212121 ;
+$mainGray:#F2F2F2 ;
+
+$theme-colors: (
+  "main":$mainRed,
+  "dark":$mainDark,
+  "gray":$mainGray
+  );
+  
+  @import "bootstrap/scss/bootstrap";
