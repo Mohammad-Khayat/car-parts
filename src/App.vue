@@ -1,7 +1,6 @@
 <template>
 <div id="app">
 
-<nav-bar></nav-bar>
 <router-view>
 
 </router-view>
@@ -9,17 +8,14 @@
 </template>
 
 <script>
-import NavBar from './components/NavBar.vue';
 export default {
   components: {
-    NavBar
   },
 };
 </script>
 
 <style lang="scss">
 body{
-  padding-top: 56px;
 }
 *{
   direction: rtl;
@@ -41,7 +37,6 @@ label{
 }
 @import url('https://fonts.googleapis.com/css2?family=Tajawal&display=swap');
 *{
-
   font-family: 'Tajawal', sans-serif !important;
 }
 body{

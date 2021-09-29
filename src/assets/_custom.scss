@@ -1,12 +1,14 @@
 
 $mainRed :#FF3737 ;
 $mainDark:#212121 ;
-$mainGray:#F2F2F2 ;
+$lightBlack:#363636;
+$mainGray:#e0dfdf ;
 
 $theme-colors: (
   "main":$mainRed,
-  "dark":$mainDark,
-  "gray":$mainGray
+  "custom-dark":$mainDark,
+  "gray":$mainGray,
+  "light-black":$lightBlack
   );
   
   @import "bootstrap/scss/bootstrap";
