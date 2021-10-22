@@ -1,3 +1,4 @@
+import axios from "axios";
 export default {
   state: {
     cars: [
@@ -21,7 +22,7 @@ export default {
       },
       {
         name: "Sonata",
-        maker: "Hyuandai",
+        maker: "Hyundai",
         model: "2018",
         partsCount: "15",
         country: "korea",
@@ -38,5 +39,43 @@ export default {
           "https://static.moniteurautomobile.be/imgcontrol/images_tmp/clients/moniteur/c680-d465/content/medias/images/news/34000/800/90/ford_mustang_mach_1__1_.jpg",
       },
     ],
+    carDto: {
+      name: " ",
+      maker: "",
+      model: "",
+      partsCount: "",
+      country: "",
+      image: "",
+    },
+  },
+  mutations: {
+    Add_Car(state, payload) {
+      state.cars.push({ ...payload });
+    },
+    Set_Cars(state, payload) {
+      state.cars = payload;
+    },
+    Delete_Car() {},
+  },
+  actions: {
+    async addCar({ commit }, payload) {
+      let res = await axios.post(
+        "http://192.168.43.34:8000/api/car/add",
+        payload
+      );
+      console.log(res);
+      commit("Add_Car", payload);
+    },
+    async getCars({ commit }) {
+      let res = await axios.get("http://192.168.43.34:8000/api/car/all");
+      commit("Set_Cars", res.data);
+    },
+    async deleteCar({ commit }, payload) {
+      let res = await axios.delete(
+        `http://192.168.43.34:8000/api/car/delete/${payload}`
+      );
+      console.log(res);
+      commit("Delete_Car");
+    },
   },
 };
