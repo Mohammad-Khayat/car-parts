@@ -11,7 +11,7 @@
             <h4 class="m-0">{{ title }}</h4>
             <b-button
               variant="transparent"
-              class="rounded-circle shadow border"
+              class="rounded-circle shadow border close-btn"
               @click="close()"
             >
               <fa icon="fas fa-times" fill="#000"> </fa>
@@ -21,8 +21,9 @@
         <b-card-body>
           <b-row no-gutters>
             <b-col>
-              <slot> </slot>
-            </b-col>
+               <slot>
+               </slot>
+             </b-col>
           </b-row>
         </b-card-body>
 
@@ -75,17 +76,30 @@ export default {
   align-items: center;
   justify-content: center;
   background-color: #0c0c0cda;
-  transition: 0.5s ease;
+  transition: 0.3s ease;
+  .modal-card{
+    transition: .3s;
+  }
 }
 .unvisible {
   visibility: hidden;
+  .modal-card{
+  transform: scale(2 ) ;
+  }
+
   opacity: 0;
 }
 .visible {
   visibility: visible;
-  opacity: 1;
-}
+  .modal-card{
+  transform: scale(1 )   ;
+  }
+  }
 .card-body {
   overflow: auto;
+}
+.close-btn{
+height: 36px;
+width: 36px;
 }
 </style>

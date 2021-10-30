@@ -1,6 +1,6 @@
 <template>
   <b-container>
-    <div class="bg-custom-dark p-2 rounded bread ">
+    <div class=" p-2  bread ">
 
                <div class="d-flex   h-100 w-50 ">
               <div
@@ -8,7 +8,8 @@
                 v-for="(item, i) in items"
                 :key="i"
               >
-                <fa v-if="item.icon" class="text-light ml-2" :icon="item.icon">
+                <fa v-if="item.icon" class="text-primary  ml-2" :icon="item.icon">
+                
                 </fa>
                 <b-nav-item class="text-dark p-0" :to="item.path">{{
                   item.name
@@ -43,13 +44,13 @@ export default {
 
 <style lang="scss" scoped>
 .nav-link {
-  color: #eee;
-  padding: 0 !important;
+   padding: 0 !important;
+
 }
 .bread {
   height: 54px;
   display: flex;
-}
+ }
 .placeholder {
   height: 38px;
 }

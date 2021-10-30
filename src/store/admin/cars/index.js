@@ -3,6 +3,8 @@ export default {
   state: {
     cars: [
       {
+
+        id:1,
         name: "S63 Amg",
         maker: "Mercedes",
         model: "2018",
@@ -12,6 +14,7 @@ export default {
           "https://www.motortrend.com/uploads/sites/5/2018/02/2018-Mercedes-AMG-S63-front-three-quarter-in-motion-02.jpg",
       },
       {
+        id:2,
         name: "GTR",
         maker: "Nissan",
         model: "2018",
@@ -21,6 +24,7 @@ export default {
           "https://topgear.nl/thumbs/hd/2019/04/nissan-gt-r-nismo-2020-9-e1555494641198-scaled.jpg",
       },
       {
+        id:3,
         name: "Sonata",
         maker: "Hyundai",
         model: "2018",
@@ -30,6 +34,7 @@ export default {
           "https://www.motortrend.com/uploads/sites/5/2019/01/2018-Hyundai-Sonata-Limited-front-three-quarter-in-motion-1.jpg",
       },
       {
+        id:4,
         name: "Mustang",
         maker: "Ford",
         model: "2018",

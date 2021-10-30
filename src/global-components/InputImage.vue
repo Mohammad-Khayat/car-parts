@@ -64,6 +64,9 @@ export default {
       }
     }
   }
+    .formulate-input-upload-area-mask {
+      border-radius: 1rem !important;
+  }
   .formulate-file-image-preview {
     img {
       object-fit: cover !important;

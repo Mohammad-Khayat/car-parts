@@ -1,20 +1,22 @@
 <template>
   <div class="admin">
-    <div class="c-row">
-      <div class="col p-0 m-0 admin-sidebar bg-custom-dark">
+       <div class="col p-0 m-0 admin-sidebar bg-main-light shadow">
         <side-bar></side-bar>
-      </div>
+    </div>
+
+
 
       <div class="col main p-0 m-0">
-        <navbar></navbar>
+      <b-container class="my-2">
+        <navbar class="shadow-sm rounded"></navbar>
+      </b-container>
         <bread-crumb class="mt-2">
           <router-view name="actions"> </router-view>
         </bread-crumb>
         <router-view></router-view>
       </div>
     </div>
-  </div>
-</template>
+ </template>
 
 <script>
 import SideBar from "@/views/admin/layout/SideBar.vue";
@@ -31,22 +33,21 @@ export default {
 </script>
 
 <style lang="scss">
-.c-row {
-  display: grid;
-  grid-template-columns: 70% 25%;
-}
+@import '@/assets/_custom.scss';
+
 .admin {
   position: relative;
-}
 ul,
 li {
   list-style: none !important;
+  padding: 0 15px;
 }
 .admin-sidebar {
   position: fixed;
   height: 100%;
   width: 240px;
-  background-color: #ccc;
+  opacity: .8;
+  backdrop-filter: blur(5px);
   overflow: auto;
   /* width */
   &::-webkit-scrollbar {
@@ -70,17 +71,19 @@ li {
 
   .nav-link {
     color: #fff !important;
-    padding: 20px;
+    padding: 18px;
     transition: 0.3s ease-in-out;
+    border-radius: 25px;
     &:hover {
-      background-color: rgba(255, 255, 255, 0.055) !important;
+  background-color:#2b2b2b1a;
+
     }
 
-    svg {
-      margin-left: 20px;
-      color: #ff3737;
-    }
   }
+  .router-link-active{
+  background-color:#2b2b2b1a;
+  
+}
 }
 .main {
   height: 100%;
@@ -88,7 +91,6 @@ li {
   width: calc(100% - 240px);
   left: 0;
 }
-.router-link-exact-active {
-  background-color: rgba(255, 255, 255, 0.055) !important;
 }
+
 </style>
