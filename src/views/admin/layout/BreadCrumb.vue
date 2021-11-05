@@ -1,5 +1,5 @@
 <template>
-  <b-container>
+  <b-container fluid>
     <div class=" p-2  bread ">
 
                <div class="d-flex   h-100 w-50 ">

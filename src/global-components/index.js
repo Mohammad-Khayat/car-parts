@@ -8,7 +8,7 @@ import { library } from "@fortawesome/fontawesome-svg-core";
 import VueGoodTablePlugin from 'vue-good-table';
 import 'vue-good-table/dist/vue-good-table.css'
 import {
-  faEllipsisVertical,
+   faEllipsisVertical,
   faTimes,
   faBuilding,
   faPlus,
