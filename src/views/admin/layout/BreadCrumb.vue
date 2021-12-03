@@ -1,6 +1,6 @@
 <template>
   <b-container>
-    <div class="bg-custom-dark p-2 rounded bread ">
+    <div class="bg-custom-dark p-2   bread ">
 
                <div class="d-flex   h-100 w-50 ">
               <div
@@ -45,10 +45,12 @@ export default {
 .nav-link {
   color: #eee;
   padding: 0 !important;
+
 }
 .bread {
   height: 54px;
   display: flex;
+  border-radius: 1.5em;
 }
 .placeholder {
   height: 38px;

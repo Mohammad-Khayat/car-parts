@@ -55,12 +55,15 @@ li {
 
   /* Track */
   &::-webkit-scrollbar-track {
-    background: #f1f1f1;
+    background: #212121;
   }
 
   /* Handle */
   &::-webkit-scrollbar-thumb {
-    background: #888;
+    background: #383838;
+    border-radius: 25px;
+    max-height: 300px;
+
   }
 
   /* Handle on hover */
@@ -81,14 +84,14 @@ li {
       color: #ff3737;
     }
   }
+.router-link-exact-active {
+  background-color: rgba(255, 255, 255, 0.055) !important;
+}
 }
 .main {
   height: 100%;
   position: absolute;
   width: calc(100% - 240px);
   left: 0;
-}
-.router-link-exact-active {
-  background-color: rgba(255, 255, 255, 0.055) !important;
 }
 </style>

@@ -1,14 +1,20 @@
-
 $mainRed :#FF3737 ;
 $mainDark:#212121 ;
 $lightBlack:#363636;
 $mainGray:#e0dfdf ;
-
+$primary:$lightBlack;
 $theme-colors: (
+  "dark":$lightBlack,
   "main":$mainRed,
   "custom-dark":$mainDark,
   "gray":$mainGray,
-  "light-black":$lightBlack
-  );
+   );
+  .form-control{
+    border-radius: 1rem !important; 
+    
+  }
+  .rounded-1rem{
+    border-radius: 1rem !important;
+  }
   
   @import "bootstrap/scss/bootstrap";

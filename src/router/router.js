@@ -1,7 +1,7 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import admin from "./admin.js";
-
+import {isLogedIn} from '@/store/auth'
 Vue.use(VueRouter);
 
 const routes = [
@@ -21,7 +21,7 @@ const routes = [
 
   {
     path: "/login",
-    name: "login",
+    name: "Login",
     component: () => import("../views/auth/Login.vue"),
   },
   {
@@ -35,5 +35,9 @@ const router = new VueRouter({
   mode: "history",
   routes,
 });
-
+router.beforeEach((to, from, next) => {
+   if (to.name !== 'Login' && !isLogedIn()) next({ name: 'Login' })
+   if(to.name =='Login' && isLogedIn()) next({name:'admin'})
+   next()
+})
 export default router;

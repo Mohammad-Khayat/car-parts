@@ -20,6 +20,7 @@ body{
 *{
   direction: rtl;
   text-align: right;
+  vertical-align: middle ;
 }
 .full-screen{
 

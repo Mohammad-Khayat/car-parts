@@ -1,4 +1,5 @@
 <template>
+
   <div
     class="
       full-screen
@@ -9,9 +10,13 @@
       justify-content-center
     "
   >
+  <div class="vw-50">
+ 
+   </div>
     <b-form class="auth-form bg-light rounded shadow">
       <b-card>
         <b-row>
+
           <b-col cols="12">
             <h4 class="text-dark m-auto text-center">تسجيل الدخول</h4>
           </b-col>
@@ -20,19 +25,22 @@
           <b-col cols="12" class="my-2">
             <div class="d-flex flex-column">
               <label for="">اسم المستخدم</label>
-              <b-input placeholder="ادخل اسم المستخدم"></b-input>
+              <b-input placeholder="ادخل اسم المستخدم"  v-model="loginDto.username"></b-input>
             </div>
           </b-col>
           <b-col cols="12" class="my-2">
             <div class="d-flex flex-column">
               <label for="">كلمة المرور</label>
-              <b-input placeholder="ادخل كلمة المرور"></b-input>
+              <b-input placeholder="ادخل كلمة المرور" type="password" v-model="loginDto.password"></b-input>
             </div>
           </b-col>
           <b-col cols="12" class="my-2">
-            <b-button variant="main" block> تسجيل الدخول</b-button>
+            <b-button variant="main" block @click="login(loginDto)"> تسجيل الدخول</b-button>
+          </b-col>
+          <b-col>        
           </b-col>
         </b-row>
+
       </b-card>
     </b-form>
     <div class="mt-2">
@@ -81,7 +89,21 @@
 </template>
 
 <script>
-export default {};
+import { mapActions, mapState , mapGetters} from 'vuex';
+  export default {
+   computed:{
+     ...mapState({loginDto:(state)=>state.auth.loginDto}),
+  ...mapGetters(['userData','jwtDecoded'])
+
+   },
+  methods:{
+    ...mapActions(['login']),
+ 
+  },
+created(){
+ }
+
+};
 </script>
 
 <style lang='scss'>

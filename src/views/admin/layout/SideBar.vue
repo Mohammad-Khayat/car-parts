@@ -10,8 +10,8 @@
               m-auto
             "
           >
-            <b-avatar rounded="circle" size="70"></b-avatar>
-            <span class="text-light m-0 mt-1">اسم المستخدم</span>
+            <b-avatar rounded="circle" size="70" src="https://www.neilsonreeves.co.uk/wp-content/uploads/Corporate-Headshot-grey-background.jpg"></b-avatar>
+            <h5 class="text-light m-0 mt-1">{{userData.username}}</h5>
           </div>
         </div>
 
@@ -45,6 +45,10 @@
               <fa icon="fa-solid fa-gear" />
               الإعدادات
             </b-nav-item>
+            <b-nav-item   @click="$store.commit('LOG_OUT')">
+              <fa icon="fa-solid fa-right-from-bracket" />
+              تسجيل الخروج
+            </b-nav-item>
           </ul>
         </div>
 </div>
@@ -52,7 +56,12 @@
 </template>
 
 <script>
-export default {};
+import {mapGetters} from 'vuex'
+export default {
+  computed:{
+    ...mapGetters(['userData'])
+  }
+};
 </script>
 
 <style></style>

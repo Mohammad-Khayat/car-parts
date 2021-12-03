@@ -19,12 +19,12 @@
     <div>
       <b-img
         class="w-100 car-img"
-        :src="'http://192.168.43.34:8000/' + car.image"
+        :src="car.image"
       ></b-img>
       <div class="overlay d-flex align-items-center justify-content-center">
         <b-button
           class="rounded-circle mx-2"
-          :to="'admin/cars/car.id'"
+          :to="`cars/${car.id}`"
           variant="light"
         >
           <fa icon="fas fa-pen " class="text-main"></fa>

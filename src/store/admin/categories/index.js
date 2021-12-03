@@ -3,20 +3,20 @@ export default {
   state: {
     categories: [
       {
-        id: 0,
+        id: 1,
         name: "قطع محرك",
         quantity: "35",
         image: "https://eskipaper.com/images/car-engine-2.jpg",
       },
       {
-        id: 1,
+        id: 2,
         name: "قطع دوزان",
         quantity: "35",
         image:
           "https://lh3.googleusercontent.com/proxy/RwhNqQ-7O3sbyahhqsZi6W2LKMwEJo7kZtPpkpQX0pFaxr5z5lm8pzTeS-qDB0JH-_XGGpECVyNSJGJmxF064dL7C3hZrHdf3qEOi0g4DT2uejvxK_C6IA2-lJqEDYQ40jDD_wB0WxAm9e4QwvvlDhQ",
       },
       {
-        id: 2,
+        id: 3,
         name: "قطع بودي",
         quantity: 20,
         image:

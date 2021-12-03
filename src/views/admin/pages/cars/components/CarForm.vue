@@ -10,18 +10,19 @@
         <b-col cols="6" class="my-2">
           <div class="d-flex flex-column">
             <label for="">بلد المنشأ</label>
-            <b-form-select
+            <vue-select
               v-model="carDto.country"
               :options="countries"
-            ></b-form-select>
+            ></vue-select>
           </div>
         </b-col>
+
         <b-col cols="6" class="my-2">
           <div class="d-flex flex-column">
             <div>
               <label for="">الشركة المصنعة</label>
             </div>
-            <b-form-select
+            <vue-select
               :options="brandsList.filter((el) => el.country == carDto.country)"
               :disabled="!carDto.country"
               value-field="name"
@@ -52,11 +53,11 @@
         <b-col cols="6" class="my-2">
           <div class="d-flex flex-column">
             <label for="">صورة السيارة</label>
-            <!-- <input-image v-model="image" :multiple="false"></input-image> -->
-            <input-image @input="handleImage" type="image"></input-image>
-            <pre>
-              {{ image }}
-            </pre>
+            <input-image
+              @input="handleImage"
+              :value="carDto.image"
+              type="image"
+            ></input-image>
           </div>
         </b-col>
       </b-row>
@@ -70,8 +71,11 @@
 </template>
 
 <script>
+import VueSelect from "@/global-components/VueSelect.vue";
 import { mapActions, mapState } from "vuex";
 export default {
+  components: { VueSelect },
+  props: ["id"],
   data() {
     return {
       selectedCountry: null,
@@ -100,7 +104,14 @@ export default {
       brandsList: (state) => state.data.brands,
       countries: (state) => state.data.countries,
       carDto: (state) => state.cars.carDto,
+      carsList: (state) => state.cars.cars,
     }),
+  },
+  created() {
+    this.$store.commit(
+      "Set_Car_Dto",
+      this.carsList.find((el) => el.id == this.id)
+    );
   },
 };
 </script>

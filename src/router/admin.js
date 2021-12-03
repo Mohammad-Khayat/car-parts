@@ -1,5 +1,24 @@
 export default [
   {
+    name: "home",
+    path: "",
+    components: {
+      default: () => import("../views/admin/pages/home"),
+    },
+
+    meta: {
+      pageTitle: "الرئيسية",
+      breadcrumb: [
+        {
+          name: "الرئيسية",
+          path: "/admin",
+          icon: "fas fa-home",
+        },
+      ],
+    },
+  },
+
+  {
     name: "cars",
     path: "cars",
     components: {
@@ -27,6 +46,7 @@ export default [
   {
     name: "CarDetails",
     path: "cars/:id",
+    props: true,
     component: () => import("../views/admin/pages/cars/components/CarForm.vue"),
     meta: {
       pageTitle: "الرئيسية",
@@ -72,6 +92,8 @@ export default [
     name: "Products",
     components: {
       default: () => import("../views/admin/pages/products/Products.vue"),
+      actions: () =>
+        import("../views/admin/pages/products/components/ProductAction.vue"),
     },
     meta: {
       pageTitle: "جميع القطع",
@@ -92,9 +114,10 @@ export default [
   {
     path: "products/:id",
     name: "Products",
-    props:true,
+    props: true,
     components: {
-      default: () => import("../views/admin/pages/products/components/ProductDetails.vue"),
+      default: () =>
+        import("../views/admin/pages/products/components/ProductDetails.vue"),
     },
     meta: {
       pageTitle: "التفاصيل",
